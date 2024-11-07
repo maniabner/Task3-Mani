@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آرایه و آبجکت بدون تکرار</title>
+</head>
+<body>
+
+<h3>آرایه اصلی با مقادیر تکراری:</h3>
+<p id="originalArray"></p>
+
+<h3>آرایه بدون مقادیر تکراری:</h3>
+<p id="uniqueArray"></p>
+
+<h3>آبجکت بدون مقادیر تکراری:</h3>
+<p id="uniqueObject"></p>
+
+<script>
+    function createArrayWithDuplicates() {
+        // ایجاد آرایه‌ای با مقادیر تکراری
+        const duplicateArray = ["apple", "banana", "apple", "orange", "banana", "grape", "apple"];
+
+        // حذف مقادیر تکراری و ایجاد آرایه‌ای جدید با استفاده از Set
+        const uniqueArray = Array.from(new Set(duplicateArray));
+
+        // تبدیل آرایه بدون تکرار به یک آبجکت
+        const uniqueObject = {};
+        uniqueArray.forEach((item, index) => {
+            uniqueObject[index] = item;
+        });
+
+        // نمایش آرایه اصلی با مقادیر تکراری
+        document.getElementById("originalArray").textContent = duplicateArray.join(", ");
+
+        // نمایش آرایه بدون مقادیر تکراری
+        document.getElementById("uniqueArray").textContent = uniqueArray.join(", ");
+
+        // نمایش آبجکت بدون مقادیر تکراری
+        document.getElementById("uniqueObject").textContent = JSON.stringify(uniqueObject);
+
+        return { uniqueArray, uniqueObject };
+    }
+
+    // اجرای تابع برای نمایش نتیجه
+    createArrayWithDuplicates();
+</script>
+
+</body>
+</html>

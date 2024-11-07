@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آبجکت و فرم با لیست داده</title>
+</head>
+<body>
+
+<form>
+    <label for="items">انتخاب آیتم:</label>
+    <input list="itemList" id="items" name="items">
+    <datalist id="itemList">
+    </datalist>
+</form>
+
+<script>
+    function createObjectAndLog() {
+        const myObject = {
+            name: "Mani",
+            age: 19,
+            city: "Urmia",
+            profession: "Developer"
+        };
+
+    
+        for (let key in myObject) {
+            console.log(`${key}: ${myObject[key]}`);
+        }
+
+        const dataList = document.getElementById('itemList');
+        for (let key in myObject) {
+            const option = document.createElement('option');
+            option.value = `${key}: ${myObject[key]}`;
+            dataList.appendChild(option);
+        }
+    }
+    createObjectAndLog();
+</script>
+
+</body>
+</html>

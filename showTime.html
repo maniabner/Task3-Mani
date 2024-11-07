@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نمایش زمان فعلی</title>
+    <style>
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<button onclick="showTime()">نمایش زمان فعلی</button>
+
+<script>
+    function showTime() {
+        const now = new Date();
+        alert(`زمان فعلی: ${now.toLocaleTimeString()}`);
+    }
+</script>
+
+</body>
+</html>

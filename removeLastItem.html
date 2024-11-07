@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حذف آخرین آیتم از آرایه</title>
+</head>
+<body>
+
+<h3>آرایه نهایی:</h3>
+<span id="arrayDisplay"></span>
+
+<button onclick="removeLastItem()">حذف آخرین آیتم و نمایش آرایه</button>
+
+<script>
+    function removeLastItem() {
+        let myArray = ["سیب", "موز", "پرتقال", "انگور", "هلو"];
+        myArray.pop();
+        document.getElementById("arrayDisplay").textContent = myArray.join(", ");
+    }
+</script>
+
+</body>
+</html>

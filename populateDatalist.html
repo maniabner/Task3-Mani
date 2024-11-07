@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آرایه و فرم با لیست داده</title>
+</head>
+<body>
+
+<form>
+    <label for="items">انتخاب آیتم:</label>
+    <input list="itemList" id="items" name="items">
+    <datalist id="itemList">
+       
+    </datalist>
+</form>
+
+<p>تعداد آیتم‌های موجود در آرایه: <span id="arraySize"></span></p>
+
+<script>
+    function populateDatalist() {
+                const itemsArray = ["Ali", "Sara", "Reza", "Mina", "Hossein"];
+
+        const dataList = document.getElementById('itemList');
+
+        itemsArray.forEach(item => {
+            const option = document.createElement('option');
+            option.value = item;
+            dataList.appendChild(option);
+        });
+
+        document.getElementById('arraySize').textContent = itemsArray.length;
+    }
+
+    populateDatalist();
+</script>
+
+</body>
+</html>
